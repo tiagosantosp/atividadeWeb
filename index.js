@@ -15,7 +15,7 @@ function buildCalculateImc() {
             xhr.send(JSON.stringify({ "height": height, "weight":  weight }));
             setTimeout(()=> {
                 let res = JSON.parse(xhr.response)
-                document.querySelector('#imc').innerHTML = res.imc.toFixed(2)
+                document.querySelector('#imc').innerHTML =  translateImcToText(res.imc.toFixed(2))
             },1000) 
 
         }catch(e){
